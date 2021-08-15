@@ -21,14 +21,14 @@ data class Livro(
     var dataDePublicacao: String
 ){
 //    @ManyToOne
-//    @JoinColumn(name = "editora_id", nullable = false)
+//    @JoinColumn(name = "editora_id", nullable = false, insertable = false, updatable = false)
 //    var editora: Editora? = null
-//
-//    @Fetch(FetchMode.SELECT)
+
+
 //    @ManyToMany(fetch = FetchType.EAGER)
 //    @JoinTable(name = "livro_autor",
 //        joinColumns = [JoinColumn(name = "fk_autor")],
 //        inverseJoinColumns = [JoinColumn(name = "fk_livro")]
 //    )
-//    var autor: List<Autor>?= null
+//    var autor: MutableList<Autor> = mutableListOf()
 }

@@ -7,8 +7,12 @@ import javax.persistence.*
 data class Editora(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    var id: Long,
+    @Column(name = "id")
+    var id: Long? = null,
     @Column(name = "nome")
-    val nome: String,
-)
+    val nome: String
+){
+////    override fun toString(): String {
+////        return "Editora(id=$id, name=$nome)"
+//    }
+}
