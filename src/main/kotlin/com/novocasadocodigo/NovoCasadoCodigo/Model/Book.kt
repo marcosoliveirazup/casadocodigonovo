@@ -2,30 +2,38 @@ package com.novocasadocodigo.NovoCasadoCodigo.Model
 
 import org.hibernate.annotations.Fetch
 import org.hibernate.annotations.FetchMode
+import java.math.BigDecimal
 import javax.persistence.*
 
 @Entity
-@Table(name = "livro")
-data class Livro(
+@Table(name = "book")
+data class Book(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     var id: Long,
-    @Column(name = "titulo")
-    var titulo: String,
+    @Column(name = "title")
+    var title: String,
     @Column(name = "isbn")
     var isbn: String,
-    @Column(name = "descricao")
-    var descricao: String,
-    @Column(name = "dataDePublicacao")
-    var dataDePublicacao: String
-){
+    @Column(name = "description")
+    var description: String,
+    @Column(name = "publicationDate")
+    var publicationDate: String,
+
+
+    @ManyToOne
+    @JoinColumn(name = "publisher_id")
+    val publisher: Publisher,
+//    val quantity: Int = 0,
+//    val value: BigDecimal = BigDecimal(0),
+
 //    @ManyToOne
-//    @JoinColumn(name = "editora_id", nullable = false, insertable = false, updatable = false)
-//    var editora: Editora? = null
+//    val books: Book
+) {
 
 
-//    @ManyToMany(fetch = FetchType.EAGER)
+//    @ManyToMany(fetch = Fe    tchType.EAGER)
 //    @JoinTable(name = "livro_autor",
 //        joinColumns = [JoinColumn(name = "fk_autor")],
 //        inverseJoinColumns = [JoinColumn(name = "fk_livro")]

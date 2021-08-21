@@ -1,8 +1,7 @@
 package com.novocasadocodigo.NovoCasadoCodigo.Repository
 
-import com.novocasadocodigo.NovoCasadoCodigo.Model.Livro
+import com.novocasadocodigo.NovoCasadoCodigo.Model.Author
 import org.springframework.data.jpa.repository.JpaRepository
 
-interface LivroRepository:JpaRepository<Livro,Long> {
-
+interface AuthorRepository: JpaRepository<Author,Long> {
 }
